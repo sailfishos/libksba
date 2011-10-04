@@ -1,0 +1,10 @@
+<package project="Mer:Trunk:Base" name="libksba">
+  <title>X.509 library</title>
+  <description>KSBA is a library designed to build software based on the X.509 and
+CMS protocols.
+
+
+
+</description>
+  <url>http://www.gnupg.org/</url>
+</package>

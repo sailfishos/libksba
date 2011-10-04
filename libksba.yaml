@@ -1,0 +1,26 @@
+Name: libksba
+Summary: X.509 library
+Version: 1.0.1
+Release: 1
+Group: System/Libraries
+License: GPLv2+
+URL: http://www.gnupg.org/
+Sources:
+    - ftp://ftp.gnupg.org/gcrypt/libksba/libksba-%{version}.tar.bz2
+Description: |
+    KSBA is a library designed to build software based on the X.509 and
+    CMS protocols.
+
+PkgBR:
+    - gawk
+    - libgpg-error-devel >= 1.2
+PkgConfigBR:
+    - libgcrypt
+SubPackages:
+    - Name: devel
+      Summary: Development headers and libraries for %{name}
+      Group: Development/Libraries
+      Description: |
+          A library designed to build software based on the X.509 and
+          CMS protocols.
+
