@@ -1,0 +1,3 @@
+[submodule "libksba"]
+	path = libksba
+	url = git://git.gnupg.org/libksba.git
