@@ -28,6 +28,14 @@ License:    GPLv3+ and (GPLv2+ or LGPLv3+)
 A library designed to build software based on the X.509 and
 CMS protocols.
 
+%package doc
+Summary:   Documentation for %{name}
+Group:     Documentation
+Requires:  %{name} = %{version}-%{release}
+
+%description doc
+Info page for %{name}.
+
 %prep
 %setup -q -n %{name}-%{version}/%{name}
 
@@ -40,24 +48,31 @@ make
 rm -rf %{buildroot}
 %make_install 
 
+mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
+install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
+        AUTHORS ChangeLog NEWS README* THANKS TODO VERSION
+
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING.GPLv2
-%{_libdir}/lib*.so.*
+%license COPYING.GPLv2
+%{_libdir}/%{name}.so.*
 
 %files devel
-%doc AUTHORS ChangeLog COPYING COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv3 NEWS README* THANKS TODO VERSION
+%license COPYING COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv3
 %defattr(-,root,root,-)
 # GPLv3+
 %{_bindir}/ksba-config
 # GPLv2+ or LGPLv3+
-%{_libdir}/lib*.so
+%{_libdir}/%{name}.so
 %{_includedir}/*
 # GPLv3+
 %{_datadir}/aclocal/*
-%{_infodir}/*
 
+%files doc
+%defattr(-,root,root,-)
+%{_infodir}/ksba.*
+%{_docdir}/%{name}-%{version}
