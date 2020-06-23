@@ -12,7 +12,6 @@ BuildRequires:  pkgconfig(libgcrypt)
 BuildRequires:  gawk
 BuildRequires:  libgpg-error-devel >= 1.2
 BuildRequires:  bison
-BuildRequires:  texinfo
 
 %description
 KSBA is a library designed to build software based on the X.509 and
