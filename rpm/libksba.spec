@@ -2,7 +2,6 @@ Name:       libksba
 Summary:    X.509 library
 Version:    1.3.5
 Release:    1
-Group:      System/Libraries
 License:    GPLv2+ or LGPLv3+
 URL:        https://github.com/sailfishos/libksba
 Source0:    libksba-%{version}.tar.bz2
@@ -20,7 +19,6 @@ CMS protocols.
 
 %package devel
 Summary:    Development headers and libraries for %{name}
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 License:    GPLv3+ and (GPLv2+ or LGPLv3+)
 
@@ -30,7 +28,6 @@ CMS protocols.
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
 
 %description doc
