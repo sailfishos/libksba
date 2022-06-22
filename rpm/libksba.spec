@@ -4,7 +4,7 @@ Version:    1.3.5
 Release:    1
 Group:      System/Libraries
 License:    GPLv2+ or LGPLv3+
-URL:        http://www.gnupg.org/
+URL:        https://github.com/sailfishos/libksba
 Source0:    libksba-%{version}.tar.bz2
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
