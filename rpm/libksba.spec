@@ -1,6 +1,6 @@
 Name:       libksba
 Summary:    X.509 library
-Version:    1.3.5
+Version:    1.6.2
 Release:    1
 License:    GPLv2+ or LGPLv3+
 URL:        https://github.com/sailfishos/libksba
@@ -11,7 +11,6 @@ BuildRequires:  pkgconfig(libgcrypt)
 BuildRequires:  gawk
 BuildRequires:  libgpg-error-devel >= 1.2
 BuildRequires:  bison
-BuildRequires:  texinfo
 
 %description
 KSBA is a library designed to build software based on the X.509 and
@@ -38,11 +37,10 @@ Info page for %{name}.
 
 %build
 ./autogen.sh
-%configure --disable-static --enable-maintainer-mode
-make
+%configure --disable-static --enable-maintainer-mode --disable-doc
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install 
 
 mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
@@ -68,8 +66,8 @@ install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
 %{_includedir}/*
 # GPLv3+
 %{_datadir}/aclocal/*
+%{_libdir}/pkgconfig/*.pc
 
 %files doc
 %defattr(-,root,root,-)
-%{_infodir}/ksba.*
 %{_docdir}/%{name}-%{version}
