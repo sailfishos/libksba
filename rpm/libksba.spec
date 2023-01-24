@@ -1,6 +1,6 @@
 Name:       libksba
 Summary:    X.509 library
-Version:    1.6.2
+Version:    1.6.3
 Release:    1
 License:    GPLv2+ or LGPLv3+
 URL:        https://github.com/sailfishos/libksba
@@ -30,7 +30,7 @@ Summary:   Documentation for %{name}
 Requires:  %{name} = %{version}-%{release}
 
 %description doc
-Info page for %{name}.
+Documentation for %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}/%{name}
@@ -41,7 +41,7 @@ Info page for %{name}.
 %make_build
 
 %install
-%make_install 
+%make_install
 
 mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}
 install -m0644 -t %{buildroot}%{_docdir}/%{name}-%{version} \
